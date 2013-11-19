@@ -1,0 +1,394 @@
+
+<manifest>
+	<applications open="true">
+	</applications>
+
+	<tactics numForMoblieRank="1" numForWifiRank="3">
+
+		<market name="百度移动市场" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="com.blsm.sft" />
+
+			<app package="com.blsm.mm" />
+
+			<app package="com.blsm.qqcs" />
+
+			<app package="com.blsm.khl" />
+
+			<app package="com.blsm.nxm" />
+
+			<app package="com.blsm.flash" />
+
+			<app package="com.blsm.horoscope" />
+
+			<app package="com.blsm.compass" />
+
+			<app package="cn.shuangshuangfei" />
+
+			<app package="cn.xianglianai" />
+
+			<app package="com.ihakula.undercover" />
+
+		</market>
+
+
+		<market name="安卓市场" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="com.blsm.mm" />
+
+			<app package="cn.shuangshuangfei" />
+
+			<app package="cn.xianglianai" />
+
+			<app package="com.blsm.compass" />
+
+			<app package="com.blsm.flash" />
+
+			<app package="com.blsm.horoscope" />
+
+		</market>
+
+		<market name="华为智汇云" numForMoblieRank="1" numForWifiRank="2"
+			open="false">
+
+			<app package="com.blsm.khl" />
+
+			<app package="com.blsm.mm" />
+
+			<app package="com.blsm.qqcs" />
+
+			<app package="cn.xianglianai" />
+		</market>
+
+		<market name="机锋市场" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="cn.shuangshuangfei" />
+
+			<app package="cn.xianglianai" />
+
+			<app package="com.blsm.qqcs" />
+
+			<app package="com.blsm.sft" />
+
+			<app package="com.blsm.mm" />
+
+			<app package="com.blsm.flash" />
+
+			<app package="com.blsm.compass" />
+
+			<app package="com.blsm.horoscope" />
+
+		</market>
+
+		<market name="联想开发者社区" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="cn.shuangshuangfei" />
+
+			<app package="cn.xianglianai" />
+
+			<app package="com.blsm.flash" />
+
+		</market>
+
+		<market name="魅族商店" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="com.blsm.sft" />
+			<app package="com.blsm.mm" />
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.nxm" />
+			<app package="com.blsm.khl" />
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+
+		</market>
+
+		<market name="oppo应用商店" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.khl" />
+			<app package="com.blsm.nxm" />
+			<app package="cn.shuangshuangfei" />
+			<app package="com.blsm.flash" />
+			<app package="com.blsm.horoscope" />
+			<app package="cn.xianglianai" />
+			<app package="com.blsm.compass" />
+
+		</market>
+
+		<market name="N多" numForMoblieRank="1" numForWifiRank="4"
+			open="true">
+			<app package="com.blsm.sft" />
+			<app package="com.blsm.mm" />
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.khl" />
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+			<app package="com.blsm.compass" />
+			<app package="com.blsm.flash" />
+			<app package="com.blsm.horoscope" />
+
+		</market>
+
+		<market name="米UI" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="com.blsm.sft" />
+			<app package="com.blsm.mm" />
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.khl" />
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+
+		</market>
+
+		<market name="360软件管家" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+		</market>
+
+		<market name="木蚂蚁" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+			<app package="cn.relian99" />
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.sft" />
+			<app package="com.blsm.mm" />
+			<app package="com.blsm.khl" />
+			<app package="com.blsm.nxm" />
+			<app package="com.blsm.horoscope" />
+		</market>
+
+		<market name="酷派应用商店" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+			<app package="com.blsm.sft" />
+			<app package="com.blsm.mm" />
+			<app package="com.blsm.qqcs" />
+			<app package="com.blsm.khl" />
+			<app package="com.blsm.nxm" />
+			<app package="com.blsm.flash" />
+		</market>
+
+
+		<market name="中兴手机应用" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="cn.shuangshuangfei" />
+			<app package="cn.xianglianai" />
+		</market>
+
+
+		<market name="搜狐应用中心" numForMoblieRank="1" numForWifiRank="2"
+			open="true">
+			<app package="cn.xianglianai" />
+			<app package="com.blsm.mm" />
+		</market>
+
+	</tactics>
+
+	<!-- 配置参数 -->
+	<params>
+
+		<market name="百度移动市场">
+
+			<app keyword="爽翻天|成人之美|成人|情趣" package="com.blsm.sft"
+				scoreParams="pid=108168&amp;gid=1005853&amp;docid=3129264&amp;s=100" />
+
+			<app keyword="秘蜜|秘蜜情趣|情趣" package="com.blsm.mm"
+				scoreParams="pid=160427&amp;gid=1006128&amp;docid=3175060&amp;s=100" />
+
+			<app keyword="成人 幸福" package="com.blsm.qqcs"
+				scoreParams="pid=292340&amp;gid=1005392&amp;docid=3127933&amp;s=100" />
+
+			<app keyword="快活林|快活" package="com.blsm.khl"
+				scoreParams="pid=328292&amp;gid=1006116&amp;docid=3175028&amp;s=100" />
+
+			<app keyword="美色" package="com.blsm.nxm"
+				scoreParams="pid=512830&amp;gid=1028962&amp;docid=3177089&amp;s=100" />
+
+			<app keyword="内涵手电筒" package="com.blsm.flash"
+				scoreParams="pid=660552&amp;gid=1344974&amp;docid=3923465&amp;s=100" />
+
+			<app keyword="com.blsm.horoscope" package="com.blsm.horoscope"
+				scoreParams="pid=660539&amp;gid=1344953&amp;docid=3923425&amp;s=100" />
+
+			<app keyword="生活指南针" package="com.blsm.compass"
+				scoreParams="pid=662831&amp;gid=1348716&amp;docid=3931232&amp;s=100" />
+
+			<app keyword="找对象|对象" package="cn.shuangshuangfei"
+				scoreParams="pid=372637&amp;gid=1029640&amp;docid=3179477&amp;s=100" />
+
+			<app keyword="想恋爱|恋爱" package="cn.xianglianai"
+				scoreParams="pid=346711&amp;gid=1021672&amp;docid=3163146&amp;s=100" />
+
+			<app keyword="谁是卧底" package="com.ihakula.undercover"
+				scoreParams="pid=696132&amp;gid=1451579&amp;docid=4151314&amp;s=100" />
+
+		</market>
+
+		<market name="安卓市场">
+			<app keyword="秘蜜" package="com.blsm.mm" />
+
+			<app keyword="找对象" package="cn.shuangshuangfei" />
+
+			<app keyword="热恋99" package="cn.xianglianai" />
+
+			<app keyword="生活指南针" package="com.blsm.compass" />
+
+			<app keyword="内涵手电筒" package="com.blsm.flash" />
+
+			<app keyword="最准星座运势" package="com.blsm.horoscope" />
+		</market>
+
+		<market name="华为智汇云">
+
+			<app keyword="快活林" package="com.blsm.khl" />
+
+			<app keyword="秘蜜" package="com.blsm.mm" />
+
+			<app keyword="性福" package="com.blsm.qqcs" />
+
+			<app keyword="想恋爱" package="cn.xianglianai" />
+		</market>
+
+		<market name="机锋市场" gfanClientVersionCode="9"
+			gfanClientVersionName="0.9.7beta">
+
+			<app keyword="找对象" package="cn.shuangshuangfei" />
+
+			<app keyword="想恋爱" package="cn.xianglianai" />
+
+			<app keyword="性福" package="com.blsm.qqcs" />
+
+			<app keyword="爽翻天" package="com.blsm.sft" />
+
+			<app keyword="秘蜜" package="com.blsm.mm" />
+
+			<app keyword="内涵手电筒" package="com.blsm.flash" />
+
+			<app keyword="生活指南针" package="com.blsm.compass" />
+
+			<app keyword="神奇星座运势" package="com.blsm.horoscope" />
+
+		</market>
+
+		<market name="联想开发者社区">
+
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="12121181" />
+
+			<app keyword="热恋99" package="cn.xianglianai" appId="12115206" />
+
+			<app keyword="内涵手电筒" package="com.blsm.flash" appId="12130079" />
+		</market>
+
+		<market name="魅族商店"
+			cookie="__utma=156282151.1515688924.1355730001.1359008083.1359016756.73; __utmz=156282151.1356312389.5.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); Hm_lvt_e4dfdbe4ead53c7cd63a1a9d9782a61f=1361842483,1362015555,1362273245,1362359403; Hm_lvt_5820e03d1cb3467b14a06602e491b325=1365673090; _islogin=true; _uid=; _keyLogin=8c65b6b9e39f3ba0c4a104d1462349; Hm_lvt_0179c84cb46bddf6c5fb59667ab347aa=1369014614,1369274496,1369369725,1369617202; Hm_lpvt_0179c84cb46bddf6c5fb59667ab347aa=1369703484; JSESSIONID=0643CE9CFEB25E4870ADB2B596103F2D.N89"
+			cookie2="__utma=156282151.1515688924.1355730001.1359008083.1359016756.73; __utmz=156282151.1356312389.5.3.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); Hm_lvt_e4dfdbe4ead53c7cd63a1a9d9782a61f=1361842483,1362015555,1362273245,1362359403; Hm_lvt_5820e03d1cb3467b14a06602e491b325=1365673090; _islogin=true; _uid=; _keyLogin=5a7a707710b9ac8a786f35033dd8f8; Hm_lvt_0179c84cb46bddf6c5fb59667ab347aa=1369014614,1369274496,1369369725,1369617202; Hm_lpvt_0179c84cb46bddf6c5fb59667ab347aa=1369617317; JSESSIONID=0643CE9CFEB25E4870ADB2B596103F2D.N89">
+			<app keyword="爽翻天" package="com.blsm.sft" appId="7e405c026228486cb3ccca9683147822" />
+			<app keyword="秘蜜" package="com.blsm.mm" appId="9228379622d348e0b6211b8e600767f0" />
+			<app keyword="性福" package="com.blsm.qqcs" appId="3f55fc21dbee42189aef6a59763ae98f" />
+			<app keyword="快活林" package="com.blsm.khl" appId="c21cb0dd348e4b24b433c74fe4fc48f9" />
+			<app keyword="美色" package="com.blsm.nxm" appId="c71da37e7491473a883d3ee3929c479e" />
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="e37db38f6b244b408fca638dba12287b" />
+			<app keyword="想恋爱" package="cn.xianglianai" appId="f0250b518caf4dbd97d0a7ab7b3e682e" />
+		</market>
+
+		<market name="oppo应用商店">
+			<app keyword="性福" package="com.blsm.qqcs" appId="293858"
+				detailParam="0000/293/858_1.html?from=1152_1" />
+			<app keyword="快活林" package="com.blsm.khl" appId="293864"
+				detailParam="0000/293/864_1.html?from=1152_1" />
+			<app keyword="美色" package="com.blsm.nxm" appId="279704"
+				detailParam="0000/279/704_1.html?from=1152_2" />
+			<app keyword="内涵手电筒" package="com.blsm.flash" appId="317682"
+				detailParam="0000/317/682_1.html?from=1152_1" />
+			<app keyword="内涵星座运势" package="com.blsm.horoscope" appId="318025"
+				detailParam="0000/318/025_1.html?from=1152_13" />
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="302917"
+				detailParam="0000/302/917_1.html?from=1152_1" />
+			<app keyword="热恋99" package="cn.xianglianai" appId="302183"
+				detailParam="0000/302/183_1.html?from=1152_1" />
+			<app keyword="生活指南针" package="com.blsm.compass" appId="318050"
+				detailParam="0000/318/050_1.html?from=1152_1" />
+		</market>
+
+		<market name="N多">
+			<app keyword="爽翻天" package="com.blsm.sft" appId="582270"
+				key="b160a05cf8902bf05ae1ae45454e8dd5" versionCode="880" versionName="2.59" />
+			<app keyword="秘蜜" package="com.blsm.mm" appId="582283"
+				key="65976ae6634125f34b7f4a37a40ef30d" versionCode="440" versionName="1.69" />
+			<app keyword="性福" package="com.blsm.qqcs" appId="582298"
+				key="bf834cce820d23c44d18878f579e6786" versionCode="83" versionName="1.29" />
+			<app keyword="快活林" package="com.blsm.khl" appId="582306"
+				key="9e296e55b55430af3fef6bb7c179087d" versionCode="69" versionName="1.29" />
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="586399"
+				key="be39794bdff2b8da6a8198ef22ade7dd" versionCode="20" versionName="1.7.1" />
+			<app keyword="热恋99" package="cn.xianglianai" appId="590940"
+				key="9e75afe9ea4f707b916ff5ea164d42a4" versionCode="21" versionName="1.7.2" />
+			<app keyword="生活指南针" package="com.blsm.compass" appId="601608"
+				key="8f98bccfa3a6aaaaaadee0718dc32e36" versionCode="2" versionName="1.00" />
+			<app keyword="内涵手电筒" package="com.blsm.flash" appId="601041"
+				key="8cb9bb7620a4abdebd2ed3e184d39759" versionCode="1" versionName="1.00" />
+			<app keyword="星座运势" package="com.blsm.horoscope" appId="601609"
+				key="428713fbe8928b7c834fd3c0c2a81e59" versionCode="20" versionName="1.00" />
+		</market>
+
+		<market name="米UI" marketVersionName="1.2.3" version="3.6.14">
+			<app keyword="爽翻天" package="com.blsm.sft" />
+			<app keyword="秘蜜" package="com.blsm.mm" />
+			<app keyword="性福成人情趣" package="com.blsm.qqcs" />
+			<app keyword="快活林" package="com.blsm.khl" />
+			<app keyword="找对象" package="cn.shuangshuangfei" />
+			<app keyword="想恋爱" package="cn.xianglianai" />
+		</market>
+
+		<market name="360软件管家"
+			im="6ccc5aa3b08da948f55303c6bbb3aeb6|0b67ebc39cdaab9d92f8011ec683d48e">
+			<app keyword="找对象" package="cn.shuangshuangfei" />
+			<app keyword="想恋爱" package="cn.xianglianai" />
+		</market>
+
+		<market name="木蚂蚁">
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="286572" />
+			<app keyword="热恋99" package="cn.xianglianai" appId="279084" />
+			<app keyword="想恋爱" package="cn.relian99" appId="339761" />
+			<app keyword="爱情趣爽翻天" package="com.blsm.sft" appId="209024" />
+			<app keyword="秘蜜成人情趣" package="com.blsm.mm" appId="217493" />
+			<app keyword="快活林" package="com.blsm.khl" appId="272899" />
+			<app keyword="性福" package="com.blsm.qqcs" appId="262769" />
+			<app keyword="美色" package="com.blsm.nxm" appId="340242" />
+			<app keyword="星座运势" package="com.blsm.horoscope" appId="373948" />
+		</market>
+
+		<market name="酷派应用商店">
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="30445"  resourceVersionId="54508"/>
+			<app keyword="热恋99" package="cn.xianglianai" appId="33217"  resourceVersionId="55929" />
+			<app keyword="爽翻天" package="com.blsm.sft" appId="27254" resourceVersionId="52531" />
+			<app keyword="秘蜜" package="com.blsm.mm" appId="27255" resourceVersionId="52537" />
+			<app keyword="性福" package="com.blsm.qqcs" appId="36006" resourceVersionId="52534" />
+			<app keyword="快活林" package="com.blsm.khl" appId="36005" resourceVersionId="52535" />
+			<app keyword="美色" package="com.blsm.nxm" appId="36007" resourceVersionId="52532" />
+			<app keyword="内涵手电筒" package="com.blsm.flash" appId="39436" resourceVersionId="56095" />
+		</market>
+
+		<market name="中兴手机应用">
+			<app keyword="找对象" package="cn.shuangshuangfei" appId="5e417a17db9142d5ba79f4274b3f8114" />
+			<app keyword="想恋爱" package="cn.xianglianai" appId="402825a93ed59da1013ed9667b8b096e" />
+		</market>
+
+		<market name="搜狐应用中心">
+			<app keyword="秘蜜" package="com.blsm.mm" appId="112074" />
+			<app keyword="热恋99" package="cn.xianglianai" appId="169746" />
+		</market>
+		
+	</params>
+
+
+</manifest>

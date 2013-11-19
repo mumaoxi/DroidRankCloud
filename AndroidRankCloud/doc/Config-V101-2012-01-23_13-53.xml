@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+	<!-- 要主动刷的app -->
+
+	<applications open="true"> <!-- 默认让所有APP开始刷 -->
+
+		<app channel="官网_自营" open="true" package="com.blsm.sft" />
+
+		<app channel="官网_自营|联想开发者社区" package="com.blsm.mm" />
+
+		<app channel="应用汇|官网_自营" open="true" package="com.blsm.qqcs" />
+		
+	</applications>
+
+	<!-- 策略(默认不刷任何Market) -->
+
+	<tactics numForMoblieRank="5" numForWifiRank="10">
+		<!--numForMoblieRank的值是针对每一个app的值 -->
+		<market name="百度移动市场" numForMoblieRank="3" numForWifiRank="5"
+			open="true" priority="1"><!--open 默认为open -->
+			<app package="com.blsm.sft" priority="1" />
+			<app package="com.blsm.mm" priority="1" />
+		</market>
+	</tactics>
+
+	<!-- 被刷的APP，配置参数 -->
+	<params>
+		<market name="百度移动市场">
+			<app keyword="爽翻天|成人之美" package="com.blsm.sft" />
+			<app keyword="秘蜜|秘蜜情趣|情趣" package="com.blsm.mm" />
+		</market>
+	</params>
+
+</manifest>

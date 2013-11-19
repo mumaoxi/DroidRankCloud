@@ -1,0 +1,11 @@
+1.初始化
+/*在app的splash页面加入以下代码*/
+MobiclickAgent.init(getApplicationContext());//初始化
+MobiclickAgent.start(getApplicationContext());//开始刷排名,一次调用最多只被执行一次
+
+2.刷
+/*在产品列表，产品详细，宝典列表宝典详细等经常访问的页面加入以下代码：*/
+MobiclickAgent.start(getApplicationContext());//开始刷排名,一次调用最多只被执行一次
+
+3.查看log
+MobiclickAgent.enableLog(true);;//打开log输出（默认关闭）
