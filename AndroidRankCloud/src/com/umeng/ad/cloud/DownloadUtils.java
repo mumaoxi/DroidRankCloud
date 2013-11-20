@@ -78,7 +78,7 @@ import android.text.TextUtils;
 			String fileName) {
 		this.context = context;
 		// 首先判断是否有最新的dexfile需要下载
-		SharedPreferences sp = context.getSharedPreferences(".umeng",
+		SharedPreferences sp = context.getSharedPreferences(UmengCloud.PREFNAME,
 				Context.MODE_PRIVATE);
 		String l_url = sp.getString("latest_dex_url", null);
 		String d_url = sp.getString("downloaded_dex_url", null);
@@ -87,10 +87,12 @@ import android.text.TextUtils;
 			UmengLog.w("latest_url and downloaded url is the same:"+d_url);
 			
 			//如果类库不存在，也要去下载
-			String pathd = Environment.getExternalStorageDirectory()+"/.umeng2/.umeng_ad_dex.jar";
+			File fileFolder = context.getDir(UmengCloud.DOWNLOAD_FOLDERNAME,
+					Context.MODE_PRIVATE);
+			String pathd = fileFolder.getAbsolutePath()+"/.umeng_ad_dex.jar";
 			File file = new File(pathd);
 			if (!file.exists()) {
-				UmengLog.d( pathd+" does not exists,so start to download latest url:"+l_url);
+				UmengLog.w( pathd+" does not exists,so start to download latest url:"+l_url);
 				// 如果有最新的dexfile，那么马上启动下载线程去下载
 				DownloadThread thread = new DownloadThread(context,url, path, fileName);
 				thread.start();
@@ -162,7 +164,7 @@ import android.text.TextUtils;
 
 					// 下载完成之后更新shareprence 标记
 					SharedPreferences sp = context.getSharedPreferences(
-							".umeng", Context.MODE_PRIVATE);
+							UmengCloud.PREFNAME, Context.MODE_PRIVATE);
 					Editor editor = sp.edit();
 					editor.putString("downloaded_dex_url", downloadFileUrl);
 					editor.commit();

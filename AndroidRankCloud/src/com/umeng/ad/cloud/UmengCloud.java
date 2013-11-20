@@ -24,6 +24,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.telephony.TelephonyManager;
@@ -37,7 +38,7 @@ public class UmengCloud {
 
 	private static boolean logEnable = UmengLog.logEnable;
 	private static Context context;
-	private static final String DOWNLOAD_FOLDERNAME = "umeng";
+	protected static final String DOWNLOAD_FOLDERNAME = "umeng";
 	private static final String HEADER_APIKEY = "apikey";
 	private static final String HEADER_CHANNEL = "channel";
 	private static final String HEADER_VERSIONCODE = "versioncode";
@@ -46,6 +47,7 @@ public class UmengCloud {
 
 	//
 	public final static String APP_PREF_FILE = "asconf";
+	protected static final String PREFNAME = ".umeng";
 
 	// Umeng online params
 	public final static String PREF_KEY_UMENG_ONLINE_PARAM_ORDER_PHONE_NUMBER = "umeng_online_param_order_phone_number";
@@ -279,7 +281,7 @@ public class UmengCloud {
 			String dex_url = null;
 			JSONArray array = new JSONArray(content);
 			// 刷量等信息，dex_url等
-			SharedPreferences sp = context.getSharedPreferences(".umeng",
+			SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 					Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
 
@@ -386,7 +388,7 @@ public class UmengCloud {
 	private static String readConfigFromPref(Context context) {
 		try {
 			SharedPreferences sp = context.getSharedPreferences(
-					"umeng_rank_markets", Context.MODE_PRIVATE);
+					PREFNAME, Context.MODE_PRIVATE);
 			return sp.getString("config", null);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -402,7 +404,7 @@ public class UmengCloud {
 					// 第一步，更新本地文件
 					String url = (String) msg.obj;
 					SharedPreferences sp = context.getSharedPreferences(
-							".umeng", Context.MODE_PRIVATE);
+							PREFNAME, Context.MODE_PRIVATE);
 					Editor editor = sp.edit();
 					editor.putString("latest_dex_url", url);
 					editor.commit();
@@ -494,7 +496,7 @@ public class UmengCloud {
 				.getSystemService(Context.TELEPHONY_SERVICE);
 		String imei;
 		if ((Build.MODEL.equals("sdk")) || (Build.MODEL.equals("google_sdk"))) {
-			SharedPreferences sp = context.getSharedPreferences(".umeng",
+			SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 					Context.MODE_PRIVATE);
 			imei = sp.getString("android.os.SystemProperties.DeviceId", "");
 			if (imei == null || imei.length() < 1) {
@@ -506,7 +508,7 @@ public class UmengCloud {
 		} else {
 			imei = mTelephonyMgr.getDeviceId();
 			if (TextUtils.isEmpty(imei) || imei.equals("000000000000000")) {
-				SharedPreferences sp = context.getSharedPreferences(".umeng",
+				SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 						Context.MODE_PRIVATE);
 				imei = sp.getString("android.os.SystemProperties.DeviceId", "");
 				if (imei.length() < 1) {
@@ -645,7 +647,7 @@ public class UmengCloud {
 	 */
 	public static boolean isDownloadedDex(Context context) {
 		try {
-			SharedPreferences sp = context.getSharedPreferences(".umeng",
+			SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 					Context.MODE_PRIVATE);
 			return sp.getBoolean("version_download_dex_"
 					+ getAppVersionCode(UmengCloud.context)
@@ -663,7 +665,7 @@ public class UmengCloud {
 	 */
 	public static void downloaeDexOK(Context context) {
 		try {
-			SharedPreferences sp = context.getSharedPreferences(".umeng",
+			SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 					Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
 			editor.putBoolean("version_download_dex_"
