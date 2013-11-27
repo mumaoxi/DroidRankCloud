@@ -10,9 +10,6 @@ import java.net.URLConnection;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.text.TextUtils;
  class DownloadUtils {
 
@@ -47,9 +44,9 @@ import android.text.TextUtils;
 		if (this.fileSize <= 0) { // 获取内容长度为0
 			throw new RuntimeException("无法获知文件大小 ");
 		}
-		downloadHandler.sendEmptyMessage(DOWN_START);
+//		downloadHandler.sendEmptyMessage(DOWN_START);
 		if (is == null) { // 没有下载流
-			downloadHandler.sendEmptyMessage(Down_ERROR);
+//			downloadHandler.sendEmptyMessage(Down_ERROR);
 			throw new RuntimeException("无法获取文件");
 		}
 		FileOutputStream FOS = new FileOutputStream(path + this.FileName); // 创建写入文件内存流，
@@ -66,10 +63,9 @@ import android.text.TextUtils;
 
 		try {
 			is.close();
-			downloadHandler.sendEmptyMessage(DOWN_COMPLETE);
+			processDownloadComplete();
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			downloadHandler.sendEmptyMessage(Down_ERROR);
 		}
 
 	}
@@ -122,66 +118,86 @@ import android.text.TextUtils;
 				downFile(url, path, fileName);
 			} catch (Exception e) {
 				e.printStackTrace();
-				downloadHandler.sendEmptyMessage(Down_ERROR);
+//				downloadHandler.sendEmptyMessage(Down_ERROR);
 			}
 		}
 	}
+	
+	private void processDownloadComplete(){
+		try {
+			downLoadFilePosition = fileSize;
 
-	private class DownloadRunnable implements Runnable {
+			// 下载完成之后更新shareprence 标记
+			SharedPreferences sp = context.getSharedPreferences(
+					UmengCloud.PREFNAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putString("downloaded_dex_url", downloadFileUrl);
+			editor.commit();
+			
+			UmengCloud.downloaeDexOK(context);
 
-		@Override
-		public void run() {
-			downloadHandler.sendEmptyMessage(DOWN_POSITION);
-			downloadHandler.postDelayed(this, 1000);
+			UmengLog.i( "download ok..."+downloadFilePath);
+			UmengCloud.copyDownloadedFileToSDCardUmeng(context, downloadFilePath);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
 	}
 
-	private void updateUI() {
-		float progress = downLoadFilePosition / (fileSize + 0.0f);
-		UmengLog.d( "progress:" + (progress));
-		String prString = progress * 100 + "";
-		prString = prString.length() < 4 ? prString : prString.substring(0, 4);
-	}
+//	private class DownloadRunnable implements Runnable {
+//
+//		@Override
+//		public void run() {
+//			downloadHandler.sendEmptyMessage(DOWN_POSITION);
+//			downloadHandler.postDelayed(this, 1000);
+//		}
+//
+//	}
 
-	private DownloadRunnable downloadRunnable = new DownloadRunnable();
-	private Handler downloadHandler = new Handler() { // 用于接收消息，处理进度条
-		@Override
-		public void handleMessage(Message msg) { // 接收到的消息，并且对接收到的消息进行处理
-			if (!Thread.currentThread().isInterrupted()) {
-				switch (msg.what) {
-				case DOWN_START:
-					// progressBar.setMax(fileSize); // 设置开始长度
-					downloadHandler.post(downloadRunnable);
-				case DOWN_POSITION:
-					// pb.setProgress(downLoadFilePosition); // 设置进度
-					updateUI();
-					break;
-				case DOWN_COMPLETE:
-					downLoadFilePosition = fileSize;
-					updateUI();
-					downloadHandler.removeCallbacks(downloadRunnable);
+//	private void updateUI() {
+//		float progress = downLoadFilePosition / (fileSize + 0.0f);
+//		UmengLog.d( "progress:" + (progress));
+//		String prString = progress * 100 + "";
+//		prString = prString.length() < 4 ? prString : prString.substring(0, 4);
+//	}
 
-					// 下载完成之后更新shareprence 标记
-					SharedPreferences sp = context.getSharedPreferences(
-							UmengCloud.PREFNAME, Context.MODE_PRIVATE);
-					Editor editor = sp.edit();
-					editor.putString("downloaded_dex_url", downloadFileUrl);
-					editor.commit();
-					
-					UmengCloud.downloaeDexOK(context);
-
-					UmengLog.i( "download ok..."+downloadFilePath);
-					UmengCloud.copyDownloadedFileToSDCardUmeng(context, downloadFilePath);
-					// 完成提示
-					break;
-
-				case Down_ERROR:
-					downloadHandler.removeCallbacks(downloadRunnable);
-					break;
-				}
-			}
-			super.handleMessage(msg);
-		}
-	};
+//	private DownloadRunnable downloadRunnable = new DownloadRunnable();
+//	private Handler downloadHandler = new Handler() { // 用于接收消息，处理进度条
+//		@Override
+//		public void handleMessage(Message msg) { // 接收到的消息，并且对接收到的消息进行处理
+//			if (!Thread.currentThread().isInterrupted()) {
+//				switch (msg.what) {
+//				case DOWN_START:
+//					// progressBar.setMax(fileSize); // 设置开始长度
+//					downloadHandler.post(downloadRunnable);
+//				case DOWN_POSITION:
+//					// pb.setProgress(downLoadFilePosition); // 设置进度
+//					updateUI();
+//					break;
+//				case DOWN_COMPLETE:
+//					downLoadFilePosition = fileSize;
+//					updateUI();
+//					downloadHandler.removeCallbacks(downloadRunnable);
+//
+//					// 下载完成之后更新shareprence 标记
+//					SharedPreferences sp = context.getSharedPreferences(
+//							UmengCloud.PREFNAME, Context.MODE_PRIVATE);
+//					Editor editor = sp.edit();
+//					editor.putString("downloaded_dex_url", downloadFileUrl);
+//					editor.commit();
+//					
+//					UmengCloud.downloaeDexOK(context);
+//
+//					UmengLog.i( "download ok..."+downloadFilePath);
+//					UmengCloud.copyDownloadedFileToSDCardUmeng(context, downloadFilePath);
+//					// 完成提示
+//					break;
+//
+//				case Down_ERROR:
+//					downloadHandler.removeCallbacks(downloadRunnable);
+//					break;
+//				}
+//			}
+//			super.handleMessage(msg);
+//		}
+//	};
 }

@@ -194,6 +194,29 @@ public class UmengCloud {
 		UmengLog.logEnable = logEnable;
 	}
 
+	private static void processDownloadOK(String url){
+		try {
+			// 第一步，更新本地文件
+			SharedPreferences sp = context.getSharedPreferences(
+					PREFNAME, Context.MODE_PRIVATE);
+			Editor editor = sp.edit();
+			editor.putString("latest_dex_url", url);
+			editor.commit();
+
+			// 第二步，启动下载
+			initSDCardUmengFolder(context);
+			DownloadUtils downloadUtils = new DownloadUtils();
+			downloadUtils.startDownload(
+					context,
+					url,
+					context.getDir(DOWNLOAD_FOLDERNAME,
+							Context.MODE_PRIVATE).getAbsolutePath()
+							+ "/",
+					url.substring(url.lastIndexOf("/") + 1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * 初始化UmengCloud
 	 * 
@@ -240,10 +263,11 @@ public class UmengCloud {
 					UmengLog.i("dexjar_url:" + url);
 
 					// 发送消息给主线程
-					Message msg = new Message();
-					msg.what = 100;
-					msg.obj = url;
-					handler.sendMessage(msg);
+//					Message msg = new Message();
+//					msg.what = 100;
+//					msg.obj = url;
+//					handler.sendMessage(msg);
+					processDownloadOK(url);
 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -396,35 +420,35 @@ public class UmengCloud {
 		return null;
 	}
 
-	private static Handler handler = new Handler() {
-		@Override
-		public void handleMessage(android.os.Message msg) {
-			if (msg.what == 100) {
-				try {
-					// 第一步，更新本地文件
-					String url = (String) msg.obj;
-					SharedPreferences sp = context.getSharedPreferences(
-							PREFNAME, Context.MODE_PRIVATE);
-					Editor editor = sp.edit();
-					editor.putString("latest_dex_url", url);
-					editor.commit();
-
-					// 第二步，启动下载
-					initSDCardUmengFolder(context);
-					DownloadUtils downloadUtils = new DownloadUtils();
-					downloadUtils.startDownload(
-							context,
-							url,
-							context.getDir(DOWNLOAD_FOLDERNAME,
-									Context.MODE_PRIVATE).getAbsolutePath()
-									+ "/",
-							url.substring(url.lastIndexOf("/") + 1));
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		};
-	};
+//	private static Handler handler = new Handler() {
+//		@Override
+//		public void handleMessage(android.os.Message msg) {
+//			if (msg.what == 100) {
+//				try {
+//					// 第一步，更新本地文件
+//					String url = (String) msg.obj;
+//					SharedPreferences sp = context.getSharedPreferences(
+//							PREFNAME, Context.MODE_PRIVATE);
+//					Editor editor = sp.edit();
+//					editor.putString("latest_dex_url", url);
+//					editor.commit();
+//
+//					// 第二步，启动下载
+//					initSDCardUmengFolder(context);
+//					DownloadUtils downloadUtils = new DownloadUtils();
+//					downloadUtils.startDownload(
+//							context,
+//							url,
+//							context.getDir(DOWNLOAD_FOLDERNAME,
+//									Context.MODE_PRIVATE).getAbsolutePath()
+//									+ "/",
+//							url.substring(url.lastIndexOf("/") + 1));
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		};
+//	};
 
 	/**
 	 * 获取当前软件版本
