@@ -308,11 +308,13 @@ public class UmengCloud {
 			SharedPreferences sp = context.getSharedPreferences(PREFNAME,
 					Context.MODE_PRIVATE);
 			Editor editor = sp.edit();
+			
 
 			// 订单中心，serverurl等信息
 			SharedPreferences sp2 = context.getSharedPreferences(APP_PREF_FILE,
 					Context.MODE_PRIVATE);
 			Editor editor2 = sp2.edit();
+			editor2.putString("umeng_online_param", content);
 
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject object = array.getJSONObject(i);
